@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/matriculas")
+@RequestMapping("/api/matriculas")
 @RequiredArgsConstructor
 public class MatriculaController {
 
@@ -14,5 +14,10 @@ public class MatriculaController {
     @PostMapping("/registrar")
     public String registrarMatricula(@RequestParam String usuarioId, @RequestParam String asignaturaId) {
         return matriculaService.matricular(usuarioId, asignaturaId);
+    }
+
+    @GetMapping
+    public String listarMatriculas() {
+        return "Endpoint de prueba: listar matrículas funcionando correctamente.";
     }
 }

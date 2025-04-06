@@ -1,10 +1,10 @@
 package com.sistema.matriculas.service;
 
+import com.sistema.matriculas.client.Asignatura;
 import com.sistema.matriculas.client.AsignaturaClient;
+import com.sistema.matriculas.client.Usuario;
 import com.sistema.matriculas.client.UsuarioClient;
-import com.sistema.matriculas.model.Asignatura;
 import com.sistema.matriculas.model.Matricula;
-import com.sistema.matriculas.model.Usuario;
 import com.sistema.matriculas.repository.MatriculaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,24 +13,24 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class MatriculaService {
 
-    private final MatriculaRepository matriculaRepository;
+    private final MatriculaRepository repository;
     private final UsuarioClient usuarioClient;
     private final AsignaturaClient asignaturaClient;
 
     public String matricular(String usuarioId, String asignaturaId) {
-        Usuario usuario = usuarioClient.obtenerUsuarioPorId(usuarioId);
-        Asignatura asignatura = asignaturaClient.obtenerAsignaturaPorId(asignaturaId);
+        Usuario usuario = usuarioClient.obtenerUsuario(usuarioId);
+        Asignatura asignatura = asignaturaClient.obtenerAsignatura(asignaturaId);
 
         if (usuario == null || asignatura == null) {
-            return "Usuario o asignatura no encontrados";
+            return "No se pudo realizar la matrícula. Usuario o Asignatura no encontrados.";
         }
 
         Matricula matricula = new Matricula();
-        matricula.setUsuarioId(usuario.getId());
-        matricula.setAsignaturaId(asignatura.getId());
+        matricula.setUsuarioId(usuarioId);
+        matricula.setAsignaturaId(asignaturaId);
+        repository.save(matricula);
 
-        matriculaRepository.save(matricula);
-
-        return "Matrícula completada: " + usuario.getNombre() + " en " + asignatura.getNombre();
+        return "✅ Matrícula registrada: " + usuario.getNombre() +
+                " fue matriculado en " + asignatura.getNombre();
     }
 }

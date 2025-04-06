@@ -1,0 +1,5 @@
+com\sistema\matriculas\model\Matricula.class
+com\sistema\matriculas\service\MatriculaService.class
+com\sistema\matriculas\MatriculasServicioApplication.class
+com\sistema\matriculas\repository\MatriculaRepository.class
+com\sistema\matriculas\controller\MatriculaController.class

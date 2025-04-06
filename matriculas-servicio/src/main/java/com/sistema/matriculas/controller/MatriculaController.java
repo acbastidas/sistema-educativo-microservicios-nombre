@@ -18,7 +18,7 @@ public class MatriculaController {
 
     @GetMapping
     public String listarMatriculas() {
-        return "Endpoint de prueba: listar matrículas funcionando correctamente.";
+        return "Listar matrículas funcionando correctamente.";
     }
 
     // Endpoint de prueba para verificar en Postman o navegador

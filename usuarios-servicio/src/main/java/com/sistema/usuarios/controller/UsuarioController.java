@@ -41,9 +41,4 @@ public class UsuarioController {
     public String saludar() {
         return "Hola desde el microservicio de asignaturas";
     }
-
-    @GetMapping
-    public String listarMatriculas() {
-        return "Endpoint de prueba: listar matrículas funcionando correctamente.";
-    }
 }

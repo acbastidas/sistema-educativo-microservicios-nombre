@@ -39,6 +39,6 @@ public class UsuarioController {
     // Endpoint de prueba para verificar en Postman o navegador
     @GetMapping("/saludo")
     public String saludar() {
-        return "Hola desde el microservicio de asignaturas";
+        return "Hola desde el microservicio de usuarios";
     }
 }

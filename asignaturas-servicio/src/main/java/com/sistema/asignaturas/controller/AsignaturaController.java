@@ -41,4 +41,9 @@ public class AsignaturaController {
     public String saludar() {
         return "Hola desde el microservicio de asignaturas";
     }
+
+    @GetMapping
+    public String listarMatriculas() {
+        return "Endpoint de prueba: listar asignaturas funcionando correctamente.";
+    }
 }

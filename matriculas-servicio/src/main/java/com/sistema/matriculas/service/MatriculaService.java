@@ -18,17 +18,23 @@ public class MatriculaService {
     private final AsignaturaClient asignaturaClient;
 
     public String matricular(String usuarioId, String asignaturaId) {
+        System.out.println("📥 Recibido usuarioId: " + usuarioId + ", asignaturaId: " + asignaturaId);
+
         Usuario usuario = usuarioClient.obtenerUsuario(usuarioId);
+        System.out.println("🔍 Usuario obtenido: " + usuario);
+
         Asignatura asignatura = asignaturaClient.obtenerAsignatura(asignaturaId);
+        System.out.println("🔍 Asignatura obtenida: " + asignatura);
 
         if (usuario == null || asignatura == null) {
-            return "No se pudo realizar la matrícula. Usuario o Asignatura no encontrados.";
+            return "❌ No se pudo realizar la matrícula. Usuario o Asignatura no encontrados.";
         }
 
         Matricula matricula = new Matricula();
         matricula.setUsuarioId(usuarioId);
         matricula.setAsignaturaId(asignaturaId);
         repository.save(matricula);
+        System.out.println("💾 Matrícula guardada con éxito.");
 
         return "✅ Matrícula registrada: " + usuario.getNombre() +
                 " fue matriculado en " + asignatura.getNombre();

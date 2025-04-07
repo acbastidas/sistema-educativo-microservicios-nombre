@@ -13,10 +13,11 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>17</java.version>
-    <spring.boot.version>3.4.4</spring.boot.version>
+    <spring.boot.version>3.2.5</spring.boot.version>
   </properties>
 
   <modules>
+    <module>eureka-server</module>
     <module>usuarios-servicio</module>
     <module>asignaturas-servicio</module>
     <module>matriculas-servicio</module>

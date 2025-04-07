@@ -1,5 +1,6 @@
 package com.sistema.matriculas.controller;
 
+import com.sistema.matriculas.dto.MatriculaRequest;
 import com.sistema.matriculas.service.MatriculaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -11,9 +12,9 @@ public class MatriculaController {
 
     private final MatriculaService matriculaService;
 
-    @PostMapping("/registrar")
-    public String registrarMatricula(@RequestParam String usuarioId, @RequestParam String asignaturaId) {
-        return matriculaService.matricular(usuarioId, asignaturaId);
+    @PostMapping
+    public String registrarMatricula(@RequestBody MatriculaRequest request) {
+        return matriculaService.matricular(request.getUsuarioId(), request.getAsignaturaId());
     }
 
     @GetMapping
@@ -24,6 +25,6 @@ public class MatriculaController {
     // Endpoint de prueba para verificar en Postman o navegador
     @GetMapping("/saludo")
     public String saludar() {
-        return "Hola desde el microservicio de asignaturas";
+        return "Hola desde el microservicio de matrículas";
     }
 }

@@ -3,6 +3,7 @@ C:\Users\Nicolas-Yeimy-Alvaro\OneDrive\Documentos\GitHub\sistema-educativo-micro
 C:\Users\Nicolas-Yeimy-Alvaro\OneDrive\Documentos\GitHub\sistema-educativo-microservicios-nombre\matriculas-servicio\src\main\java\com\sistema\matriculas\service\MatriculaService.java
 C:\Users\Nicolas-Yeimy-Alvaro\OneDrive\Documentos\GitHub\sistema-educativo-microservicios-nombre\matriculas-servicio\src\main\java\com\sistema\matriculas\model\Matricula.java
 C:\Users\Nicolas-Yeimy-Alvaro\OneDrive\Documentos\GitHub\sistema-educativo-microservicios-nombre\matriculas-servicio\src\main\java\com\sistema\matriculas\repository\MatriculaRepository.java
+C:\Users\Nicolas-Yeimy-Alvaro\OneDrive\Documentos\GitHub\sistema-educativo-microservicios-nombre\matriculas-servicio\src\main\java\com\sistema\matriculas\dto\MatriculaRequest.java
 C:\Users\Nicolas-Yeimy-Alvaro\OneDrive\Documentos\GitHub\sistema-educativo-microservicios-nombre\matriculas-servicio\src\main\java\com\sistema\matriculas\controller\MatriculaController.java
 C:\Users\Nicolas-Yeimy-Alvaro\OneDrive\Documentos\GitHub\sistema-educativo-microservicios-nombre\matriculas-servicio\src\main\java\com\sistema\matriculas\MatriculasServicioApplication.java
 C:\Users\Nicolas-Yeimy-Alvaro\OneDrive\Documentos\GitHub\sistema-educativo-microservicios-nombre\matriculas-servicio\src\main\java\com\sistema\matriculas\client\AsignaturaClient.java

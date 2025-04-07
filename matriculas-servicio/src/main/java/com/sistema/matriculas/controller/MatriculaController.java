@@ -17,11 +17,6 @@ public class MatriculaController {
         return matriculaService.matricular(request.getUsuarioId(), request.getAsignaturaId());
     }
 
-    @GetMapping
-    public String listarMatriculas() {
-        return "Listar matrículas funcionando correctamente.";
-    }
-
     // Endpoint de prueba para verificar en Postman o navegador
     @GetMapping("/saludo")
     public String saludar() {

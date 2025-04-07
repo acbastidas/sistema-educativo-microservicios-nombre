@@ -1,11 +1,12 @@
 com\sistema\matriculas\model\Matricula.class
 com\sistema\matriculas\service\MatriculaService.class
+com\sistema\matriculas\client\AsignaturaClient.class
+com\sistema\matriculas\model\Usuario.class
+com\sistema\matriculas\client\UsuarioClient.class
 com\sistema\matriculas\client\Asignatura.class
 com\sistema\matriculas\MatriculasServicioApplication.class
 com\sistema\matriculas\repository\MatriculaRepository.class
 com\sistema\matriculas\controller\MatriculaController.class
-com\sistema\matriculas\client\AsignaturaClient.class
-com\sistema\matriculas\model\Usuario.class
+com\sistema\matriculas\dto\MatriculaRequest.class
 com\sistema\matriculas\client\Usuario.class
-com\sistema\matriculas\client\UsuarioClient.class
 com\sistema\matriculas\model\Asignatura.class

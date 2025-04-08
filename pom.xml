@@ -22,7 +22,7 @@
     <module>asignaturas-servicio</module>
     <module>matriculas-servicio</module>
     <!-- <module>config-server</module> -->
-    <!-- <module>gateway</module> -->
+    <module>gateway</module>
   </modules>
 
   <dependencyManagement>

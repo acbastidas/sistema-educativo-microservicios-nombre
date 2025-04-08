@@ -39,4 +39,8 @@ public class MatriculaService {
         return "✅ Matrícula registrada: " + usuario.getNombre() +
                 " fue matriculado en " + asignatura.getNombre();
     }
+
+    public Matricula guardarMatricula(Matricula matricula) {
+        return repository.save(matricula);
+    }
 }

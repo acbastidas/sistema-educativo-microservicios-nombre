@@ -1,8 +1,8 @@
-package com.sistema.asignaturas.controlador;
+package com.sistema.asignaturas;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sistema.asignaturas.entidad.Asignatura;
-import com.sistema.asignaturas.repositorio.AsignaturaRepository;
+import com.sistema.asignaturas.model.Asignatura;
+import com.sistema.asignaturas.repository.AsignaturaRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;

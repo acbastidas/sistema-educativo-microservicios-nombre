@@ -4,7 +4,7 @@ import com.sistema.usuarios.model.Usuario;
 import com.sistema.usuarios.repository.UsuarioRepository;
 import com.sistema.usuarios.service.UsuarioService;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,12 +17,12 @@ public class UsuarioServiceTest {
 
     @Test
     public void testObtenerUsuarioPorId() {
-        Usuario usuario = new Usuario("1", "Juan", "juan@example.com", "ROLE_USER");
+        Usuario usuario = new Usuario("1", "Juan", "1234", "ROLE_USER");
         when(usuarioRepository.findById("1")).thenReturn(Optional.of(usuario));
 
-        Usuario resultado = usuarioService.obtenerUsuarioPorId("1");
+        Optional<Usuario> resultado = usuarioService.obtenerPorId("1");
 
-        assertNotNull(resultado);
-        assertEquals("Juan", resultado.getNombre());
+        assertTrue(resultado.isPresent());
+        assertEquals("Juan", resultado.get().getUsername());
     }
 }

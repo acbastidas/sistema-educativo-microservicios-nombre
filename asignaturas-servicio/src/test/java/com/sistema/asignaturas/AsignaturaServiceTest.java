@@ -1,7 +1,8 @@
-package com.sistema.asignaturas.servicio;
+package com.sistema.asignaturas;
 
-import com.sistema.asignaturas.entidad.Asignatura;
-import com.sistema.asignaturas.repositorio.AsignaturaRepository;
+import com.sistema.asignaturas.model.Asignatura;
+import com.sistema.asignaturas.repository.AsignaturaRepository;
+import com.sistema.asignaturas.service.AsignaturaService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;

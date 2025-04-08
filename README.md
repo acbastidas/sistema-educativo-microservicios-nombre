@@ -1,4 +1,5 @@
 Sistema Educativo - Microservicios
+
 Este repositorio contiene el desarrollo de un sistema educativo distribuido utilizando arquitectura de microservicios con Spring Boot y Spring Cloud. El objetivo es modularizar diferentes funcionalidades como gestión de usuarios, asignaturas y calificaciones, entre otros.
 
 👨‍💻 Datos personales

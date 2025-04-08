@@ -1,0 +1,56 @@
+version: '3.8'
+services:
+  config-server:
+    build: ./config-server
+    ports:
+      - "8888:8888"
+    environment:
+      - GIT_REPO=https://github.com/tu-usuario/config-repo.git
+    networks:
+      - sistema-red
+
+  eureka-server:
+    build: ./eureka-server
+    ports:
+      - "8761:8761"
+    depends_on:
+      - config-server
+    networks:
+      - sistema-red
+
+  gateway:
+    build: ./gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka-server
+      - config-server
+    networks:
+      - sistema-red
+
+  usuarios-servicio:
+    build: ./usuarios-servicio
+    depends_on:
+      - config-server
+      - eureka-server
+    networks:
+      - sistema-red
+
+  asignaturas-servicio:
+    build: ./asignaturas-servicio
+    depends_on:
+      - config-server
+      - eureka-server
+    networks:
+      - sistema-red
+
+  matriculas-servicio:
+    build: ./matriculas-servicio
+    depends_on:
+      - config-server
+      - eureka-server
+    networks:
+      - sistema-red
+
+networks:
+  sistema-red:

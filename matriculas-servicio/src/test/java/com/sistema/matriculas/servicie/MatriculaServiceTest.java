@@ -1,13 +1,12 @@
-package com.sistema.matriculas.servicio;
+package com.sistema.matriculas.servicie;
 
-import com.sistema.matriculas.cliente.UsuarioClient;
-import com.sistema.matriculas.cliente.AsignaturaClient;
-import com.sistema.matriculas.entidad.Matricula;
-import com.sistema.matriculas.repositorio.MatriculaRepository;
+import com.sistema.matriculas.client.UsuarioClient;
+import com.sistema.matriculas.client.AsignaturaClient;
+import com.sistema.matriculas.model.Matricula;
+import com.sistema.matriculas.service.MatriculaService;
+import com.sistema.matriculas.repository.MatriculaRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;

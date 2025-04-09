@@ -17,12 +17,12 @@ public class UsuarioServiceTest {
 
     @Test
     public void testObtenerUsuarioPorId() {
-        Usuario usuario = new Usuario("1", "Juan", "1234", "ROLE_USER");
+        Usuario usuario = new Usuario("1", "Juan", "juan@example.com", "juan123", "password123");
         when(usuarioRepository.findById("1")).thenReturn(Optional.of(usuario));
 
         Optional<Usuario> resultado = usuarioService.obtenerPorId("1");
 
         assertTrue(resultado.isPresent());
-        assertEquals("Juan", resultado.get().getUsername());
+        assertEquals("juan123", resultado.get().getUsername()); // Asegúrate de que el valor del 'username' sea correcto
     }
 }

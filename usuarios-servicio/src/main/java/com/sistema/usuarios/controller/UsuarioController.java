@@ -2,43 +2,28 @@ package com.sistema.usuarios.controller;
 
 import com.sistema.usuarios.model.Usuario;
 import com.sistema.usuarios.service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
 
-    private final UsuarioService service;
-
-    public UsuarioController(UsuarioService service) {
-        this.service = service;
-    }
-
-    @GetMapping
-    public List<Usuario> listarTodos() {
-        return service.obtenerTodos();
-    }
-
-    @GetMapping("/{id}")
-    public Usuario obtenerPorId(@PathVariable String id) {
-        return service.obtenerPorId(id).orElse(null);
-    }
+    @Autowired
+    private UsuarioService usuarioService;
 
     @PostMapping
-    public Usuario crear(@RequestBody Usuario usuario) {
-        return service.guardar(usuario);
+    public ResponseEntity<Usuario> crearUsuario(@RequestBody Usuario usuario) {
+        Usuario usuarioCreado = usuarioService.crear(usuario);
+        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioCreado); // Asegúrate de devolver el objeto
+                                                                              // completo
     }
 
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable String id) {
-        service.eliminar(id);
-    }
-
-    // Endpoint de prueba para verificar en Postman o navegador
-    @GetMapping("/saludo")
-    public String saludar() {
-        return "Hola desde el microservicio de usuarios";
+    public ResponseEntity<Void> eliminarUsuario(@PathVariable String id) {
+        usuarioService.eliminar(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

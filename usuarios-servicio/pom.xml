@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.sistema</groupId>
     <artifactId>sistema-educativo-microservicios-nombre</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
 
   <artifactId>usuarios-servicio</artifactId>
@@ -20,15 +20,15 @@
 
     <!-- Spring Security -->
     <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-security</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
     </dependency>
 
     <!-- JWT -->
     <dependency>
-        <groupId>io.jsonwebtoken</groupId>
-        <artifactId>jjwt</artifactId>
-        <version>0.9.1</version>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>0.9.1</version>
     </dependency>
 
     <!-- Spring Boot MongoDB -->
@@ -37,14 +37,24 @@
       <artifactId>spring-boot-starter-data-mongodb</artifactId>
     </dependency>
 
+    <!-- Spring Boot Actuator -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
+
     <!-- Lombok -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Servlet API para filtros -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
       <scope>provided</scope>
     </dependency>
 
@@ -53,12 +63,12 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
-        <exclusions>
+      <exclusions>
         <exclusion>
           <groupId>org.junit.vintage</groupId>
           <artifactId>junit-vintage-engine</artifactId>
         </exclusion>
-        </exclusions>
+      </exclusions>
     </dependency>
 
     <!-- Spring Security Test -->
@@ -67,12 +77,5 @@
       <artifactId>spring-security-test</artifactId>
       <scope>test</scope>
     </dependency>
-
-    <!-- Lombok (versión y scope heredados del padre) -->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-    </dependency>
   </dependencies>
 </project>
-

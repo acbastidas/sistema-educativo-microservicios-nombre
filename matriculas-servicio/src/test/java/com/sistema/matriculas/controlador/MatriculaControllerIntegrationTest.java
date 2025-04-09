@@ -1,12 +1,11 @@
 package com.sistema.matriculas.controlador;
 
-import com.sistema.matriculas.entidad.Matricula;
-import com.sistema.matriculas.repositorio.MatriculaRepository;
+import com.sistema.matriculas.model.Matricula;
+import com.sistema.matriculas.repository.MatriculaRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

@@ -4,7 +4,6 @@ import com.sistema.asignaturas.model.Asignatura;
 import com.sistema.asignaturas.repository.AsignaturaRepository;
 import com.sistema.asignaturas.service.AsignaturaService;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Optional;
@@ -20,7 +19,7 @@ public class AsignaturaServiceTest {
 
     @Test
     void testObtenerAsignaturaPorId() {
-        Asignatura asignatura = new Asignatura("1", "Matemáticas", "Álgebra y cálculo");
+        Asignatura asignatura = new Asignatura("1", "Matemáticas", "Álgebra", 4);
         when(asignaturaRepository.findById("1")).thenReturn(Optional.of(asignatura));
 
         Optional<Asignatura> resultado = asignaturaService.obtenerPorId("1");

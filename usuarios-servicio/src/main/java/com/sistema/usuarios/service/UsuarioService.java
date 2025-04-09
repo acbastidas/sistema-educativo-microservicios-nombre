@@ -24,8 +24,16 @@ public class UsuarioService {
         return repository.findById(id);
     }
 
-    public Usuario guardar(Usuario usuario) {
-        return repository.save(usuario);
+    public Usuario crear(Usuario usuario) {
+        return repository.save(usuario); // Uso del método 'save' de Spring Data
+    }
+
+    public Optional<Usuario> actualizar(String id, Usuario usuario) {
+        return repository.findById(id).map(existing -> {
+            existing.setNombre(usuario.getNombre());
+            existing.setEmail(usuario.getEmail());
+            return repository.save(existing);
+        });
     }
 
     public void eliminar(String id) {

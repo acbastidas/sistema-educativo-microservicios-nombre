@@ -1,7 +1,10 @@
 package com.sistema.usuarios.controller;
 
+import com.sistema.usuarios.dto.JwtResponse;
 import com.sistema.usuarios.model.Usuario;
 import com.sistema.usuarios.service.UsuarioService;
+import com.sistema.usuarios.security.JwtUtil;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,16 +17,17 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
-    @PostMapping
-    public ResponseEntity<Usuario> crearUsuario(@RequestBody Usuario usuario) {
-        Usuario usuarioCreado = usuarioService.crear(usuario);
-        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioCreado); // Asegúrate de devolver el objeto
-                                                                              // completo
-    }
+    @Autowired
+    private JwtUtil jwtUtil;
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> eliminarUsuario(@PathVariable String id) {
-        usuarioService.eliminar(id);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    @PostMapping("/usuarios")
+    public ResponseEntity<JwtResponse> crearUsuario(@RequestBody Usuario usuario) {
+        // Lógica para crear el usuario
+        Usuario usuarioCreado = usuarioService.saveUsuario(usuario);
+
+        String jwt = jwtUtil.generateToken(usuarioCreado.getNombre());
+        JwtResponse jwtResponse = new JwtResponse(jwt, usuarioCreado.getNombre(), usuarioCreado.getEmail());
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(jwtResponse);
     }
 }

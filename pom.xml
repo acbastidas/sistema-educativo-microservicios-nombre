@@ -53,6 +53,9 @@
         <plugin>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
+          <configuration>
+            <mainClass>com.sistema.usuarios.UsuariosServicioApplication</mainClass> <!-- Aquí se especifica la clase principal -->
+          </configuration>
         </plugin>
 
         <!-- Java Compiler Plugin with -parameters flag -->
@@ -63,7 +66,7 @@
           <configuration>
             <source>${java.version}</source>
             <target>${java.version}</target>
-            <compilerArgument>-parameters</compilerArgument>  <!-- Include this flag -->
+            <compilerArgument>-parameters</compilerArgument>  <!-- Incluye esta bandera -->
           </configuration>
         </plugin>
       </plugins>

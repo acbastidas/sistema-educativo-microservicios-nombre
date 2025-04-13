@@ -15,12 +15,12 @@ public class SecurityConfig {
                                 .csrf(csrf -> csrf.disable())
                                 .authorizeHttpRequests(auth -> auth
                                                 .requestMatchers("/auth/**").permitAll() // Permitir acceso público a la
-                                                                                         // autenticación
+                                                // autenticación
                                                 .anyRequest().authenticated()) // Requiere autenticación para el resto
-                                                                               // de endpoints
+                                // de endpoints
                                 .sessionManagement(session -> session
                                                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Deshabilitar
-                                                                                                         // sesiones
+                                // sesiones
                                 .addFilter(new JwtAuthenticationFilter()); // Agregar el filtro JWT
 
                 return http.build();

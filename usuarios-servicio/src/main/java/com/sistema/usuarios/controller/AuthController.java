@@ -20,9 +20,9 @@ public class AuthController {
 
     @PostMapping("/login")
     public String login(@RequestBody Usuario usuario) {
-        Optional<Usuario> userDb = usuarioRepository.findByUsername(usuario.getUsername());
+        Optional<Usuario> userDb = usuarioRepository.findByNombre(usuario.getNombre());
         if (userDb.isPresent() && userDb.get().getPassword().equals(usuario.getPassword())) {
-            return jwtUtil.generateToken(usuario.getUsername());
+            return jwtUtil.generateToken(usuario.getNombre());
         }
         throw new RuntimeException("Credenciales inválidas");
     }

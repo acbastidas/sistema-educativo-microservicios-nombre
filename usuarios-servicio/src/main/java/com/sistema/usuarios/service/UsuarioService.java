@@ -2,6 +2,8 @@ package com.sistema.usuarios.service;
 
 import com.sistema.usuarios.model.Usuario;
 import com.sistema.usuarios.repository.UsuarioRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,6 +11,13 @@ import java.util.Optional;
 
 @Service
 public class UsuarioService {
+
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+
+    public Usuario saveUsuario(Usuario usuario) {
+        return usuarioRepository.save(usuario);
+    }
 
     private final UsuarioRepository repository;
 

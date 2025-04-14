@@ -11,17 +11,28 @@ public class Asignatura {
     private String nombre;
     private String aula;
     private int creditos;
+    private String descripcion; // Agregar el campo descripcion
 
     // Constructor vacío requerido por Spring y MongoDB
     public Asignatura() {
     }
 
-    // Constructor con los 4 parámetros
+    // Constructor con los 5 parámetros
+    public Asignatura(String id, String nombre, String aula, int creditos, String descripcion) {
+        this.id = id;
+        this.nombre = nombre;
+        this.aula = aula;
+        this.creditos = creditos;
+        this.descripcion = descripcion;
+    }
+
+    // Constructor con 4 parámetros (sin descripcion)
     public Asignatura(String id, String nombre, String aula, int creditos) {
         this.id = id;
         this.nombre = nombre;
         this.aula = aula;
         this.creditos = creditos;
+        this.descripcion = ""; // Asigna un valor por defecto vacío
     }
 
     // Getters y setters
@@ -55,5 +66,13 @@ public class Asignatura {
 
     public void setCreditos(int creditos) {
         this.creditos = creditos;
+    }
+
+    public String getDescripcion() { // Getter para descripcion
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) { // Setter para descripcion
+        this.descripcion = descripcion;
     }
 }

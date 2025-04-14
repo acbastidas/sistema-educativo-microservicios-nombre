@@ -1,10 +1,28 @@
 package com.sistema.matriculas.model;
 
-import lombok.Data;
-
-@Data
 public class Asignatura {
-    private String id;
+    private String asignaturaId;
     private String nombre;
-    private String descripcion;
+
+    public Asignatura(String asignaturaId, String nombre) {
+        this.asignaturaId = asignaturaId;
+        this.nombre = nombre;
+    }
+
+    // Getters y setters
+    public String getAsignaturaId() {
+        return asignaturaId;
+    }
+
+    public void setAsignaturaId(String asignaturaId) {
+        this.asignaturaId = asignaturaId;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 }

@@ -1,9 +1,12 @@
 package com.sistema.matriculas.controller;
 
 import com.sistema.matriculas.dto.MatriculaRequest;
+import com.sistema.matriculas.model.Matricula;
 import com.sistema.matriculas.service.MatriculaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/matriculas")
@@ -15,6 +18,11 @@ public class MatriculaController {
     @PostMapping
     public String registrarMatricula(@RequestBody MatriculaRequest request) {
         return matriculaService.matricular(request.getUsuarioId(), request.getAsignaturaId());
+    }
+
+    @GetMapping
+    public List<Matricula> listarMatriculas() {
+        return matriculaService.obtenerTodas();
     }
 
     // Endpoint de prueba para verificar en Postman o navegador

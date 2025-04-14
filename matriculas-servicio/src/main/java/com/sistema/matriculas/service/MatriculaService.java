@@ -18,8 +18,10 @@ public class MatriculaService {
     private final UsuarioClient usuarioClient;
     private final AsignaturaClient asignaturaClient;
 
+    // Registra una nueva matrícula validando primero que el usuario y la asignatura
+    // existen
     public String matricular(String usuarioId, String asignaturaId) {
-        // Uso simulado de los Feign Clients para evitar el warning
+        // Validaciones usando FeignClient (simula que existen)
         usuarioClient.obtenerUsuario(usuarioId);
         asignaturaClient.obtenerAsignatura(asignaturaId);
 
@@ -31,10 +33,12 @@ public class MatriculaService {
         return "Matrícula registrada con éxito";
     }
 
+    // Retorna todas las matrículas almacenadas
     public List<Matricula> obtenerTodas() {
         return matriculaRepository.findAll();
     }
 
+    // Método auxiliar para guardar una matrícula directamente (usado en tests)
     public Matricula guardarMatricula(Matricula matricula) {
         return matriculaRepository.save(matricula);
     }

@@ -1,20 +1,38 @@
 package com.sistema.matriculas.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Document(collection = "matriculas")
 public class Matricula {
-    @Id
-    private String id;
+    private String matriculaId;
     private String usuarioId;
     private String asignaturaId;
+
+    public Matricula(String matriculaId, String usuarioId, String asignaturaId) {
+        this.matriculaId = matriculaId;
+        this.usuarioId = usuarioId;
+        this.asignaturaId = asignaturaId;
+    }
+
+    // Getters y setters
+    public String getMatriculaId() {
+        return matriculaId;
+    }
+
+    public void setMatriculaId(String matriculaId) {
+        this.matriculaId = matriculaId;
+    }
+
+    public String getUsuarioId() {
+        return usuarioId;
+    }
+
+    public void setUsuarioId(String usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+
+    public String getAsignaturaId() {
+        return asignaturaId;
+    }
+
+    public void setAsignaturaId(String asignaturaId) {
+        this.asignaturaId = asignaturaId;
+    }
 }

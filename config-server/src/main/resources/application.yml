@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/tu-usuario/config-repo
+          uri: https://github.com/acbastidas/config-repo
           default-label: main
           clone-on-start: true
 

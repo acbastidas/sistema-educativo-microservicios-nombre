@@ -72,4 +72,21 @@
     </dependencies>
   </dependencyManagement>
 
+  <build>
+  <plugins>
+    <plugin>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-maven-plugin</artifactId>
+      <version>3.2.5</version>
+      <executions>
+        <execution>
+          <goals>
+            <goal>repackage</goal> <!-- 👈 Necesario para generar el MANIFEST con Main-Class -->
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</build>
+
 </project>
